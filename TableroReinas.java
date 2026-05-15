@@ -52,14 +52,11 @@ public class TableroReinas extends JFrame {
         fila1.add(rbTodas);
 
         JPanel fila2 = new JPanel(new FlowLayout());
-        chkFija = new JCheckBox("Casilla Fija (F, C):");
-        txtFila = new JTextField(2);
+        chkFija = new JCheckBox("Casilla fija (columna inicial de la primera fila):");
         txtCol = new JTextField(2);
-        txtFila.setEnabled(false);
         txtCol.setEnabled(false);
         
         chkFija.addActionListener(e -> {
-            txtFila.setEnabled(chkFija.isSelected());
             txtCol.setEnabled(chkFija.isSelected());
         });
 
@@ -67,7 +64,6 @@ public class TableroReinas extends JFrame {
         btnResolver.addActionListener(e -> ejecutarBusqueda());
 
         fila2.add(chkFija);
-        fila2.add(txtFila);
         fila2.add(txtCol);
         fila2.add(btnResolver);
 
@@ -189,4 +185,3 @@ public class TableroReinas extends JFrame {
         SwingUtilities.invokeLater(() -> new TableroReinas().setVisible(true));
     }
 }
-
